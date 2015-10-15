@@ -369,10 +369,10 @@ module JSONAPI
       # TODO: remove this after the createable_fields and updateable_fields are phased out
       # :nocov:
       def method_missing(method, *args)
-        if method.to_s.match /createable_fields/
+        if method.to_s.match(/createable_fields/)
           ActiveSupport::Deprecation.warn('`createable_fields` is deprecated, please use `creatable_fields` instead')
           creatable_fields(*args)
-        elsif method.to_s.match /updateable_fields/
+        elsif method.to_s.match(/updateable_fields/)
           ActiveSupport::Deprecation.warn('`updateable_fields` is deprecated, please use `updatable_fields` instead')
           updatable_fields(*args)
         else
